@@ -1,25 +1,14 @@
-﻿using DevExpress.XtraEditors;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using ConstantLineExtension.Win;
-using System.IO;
+using DevExpress.XtraEditors;
 
-namespace WinDashboardSample
-{
-    public partial class Form1 : XtraForm
-    {
-        public Form1()
-        {
+namespace WinDashboardSample {
+    public partial class Form1 : XtraForm {
+        public Form1() {
             string dataDirectory = Directory.GetParent(Directory.GetParent(Directory.GetParent(Application.StartupPath).FullName).FullName).FullName;
             AppDomain.CurrentDomain.SetData("DataDirectory", dataDirectory);
-
 
             InitializeComponent();
             dashboardDesigner1.CreateRibbon();
