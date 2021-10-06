@@ -15,7 +15,7 @@ namespace MvcDashboardSample {
         public static string DashboardFolder { get { return Path.Combine(HostingEnvironment.MapPath("~"), @"..\Data\Dashboards"); } }
 
         public static void RegisterService(RouteCollection routes) {
-            routes.MapDashboardRoute("dashboardControl");
+            routes.MapDashboardRoute("api/dashboard", "DefaultDashboard");
 
             DashboardFileStorage dashboardFileStorage = new DashboardFileStorage(DashboardFolder);
             DashboardConfigurator.Default.SetDashboardStorage(dashboardFileStorage);
