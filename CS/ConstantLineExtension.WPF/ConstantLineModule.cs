@@ -7,7 +7,6 @@ using System.Windows;
 using System.Windows.Data;
 using DevExpress.DashboardCommon;
 using DevExpress.DashboardCommon.ViewerData;
-using DevExpress.DashboardWpf;
 using DevExpress.Mvvm.UI.Interactivity;
 using DevExpress.XtraCharts;
 using DevExpress.XtraReports.UI;
@@ -16,17 +15,17 @@ using Newtonsoft.Json;
 namespace ConstantLineExtension.WPF
 {
 
-    public class ConstantLineModule: Behavior<DashboardControl>
+    public class ConstantLineModule: Behavior<DevExpress.DashboardWpf.DashboardControl>
     {
         public const string CustomPropertyName = "ConstantLineSettings";
-        DashboardControl dashboardControl;
+        DevExpress.DashboardWpf.DashboardControl dashboardControl;
 
         #region Assigning Logic
 
         protected override void OnAttached()
         {
             base.OnAttached();
-            dashboardControl = AssociatedObject as DashboardControl;
+            dashboardControl = AssociatedObject as DevExpress.DashboardWpf.DashboardControl;
             dashboardControl.Resources = new ResourceDictionary { Source = new Uri("pack://application:,,,/ConstantLineExtension.WPF;component/ConstantLineModuleStyle.xaml") };
             dashboardControl.ChartItemStyle = dashboardControl.Resources["chartStyle"] as Style;
             dashboardControl.CustomExport += CustomExport;
@@ -43,7 +42,7 @@ namespace ConstantLineExtension.WPF
             dashboardControl = null;
        }
 
-        private void TargetDashboardControl_ConfigureItemDataCalculation(object sender, ConfigureItemDataCalculationEventArgs e)
+        private void TargetDashboardControl_ConfigureItemDataCalculation(object sender, DevExpress.DashboardWpf.ConfigureItemDataCalculationEventArgs e)
         {
             e.CalculateAllTotals = true;
         }
