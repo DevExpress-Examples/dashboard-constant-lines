@@ -16,8 +16,8 @@ Export of constant lines is also supported.
 
 ## Documentation
 
-- [WinForms Designer - Custom Properties](https://docs.devexpress.com/Dashboard/401595/?v=20.1)
-- [Web Dashboard - Custom Properties](https://docs.devexpress.com/Dashboard/401702/?v=20.1)
+- [WinForms Designer - Custom Properties](https://docs.devexpress.com/Dashboard/401595/)
+- [Web Dashboard - Custom Properties](https://docs.devexpress.com/Dashboard/401702/)
 
 
 ## More Examples
@@ -34,3 +34,4 @@ Export of constant lines is also supported.
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
